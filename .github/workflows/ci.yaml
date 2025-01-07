@@ -66,16 +66,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         
-      - name: List current Kernels
-        run: jupyter kernelspec list
-        
       - name: Setup micromamba
         uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: environment.yaml
           cache-environment: true
           cache-downloads: true
-
+      - name: List current Kernels
+        run: jupyter kernelspec list
+        
       - name: Pull Williamette River domain data
         run: |
           ./pull_domain.py --name=williamette_river
