@@ -77,10 +77,12 @@ jobs:
         run: |
           ./pull_domain.py --name=williamette_river
 
+      - name: List current Kernels
+        run: jupyter kernelspec list
+        
       - name: Test notebooks
         working-directory: .github/scripts
         run: |
           python test_notebooks.py
       
-      - name: List current Kernels
-        run: jupyter kernelspec list
+     
