@@ -65,7 +65,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
+        
+      - name: List current Kernels
+        run: jupyter kernelspec list
+        
       - name: Setup micromamba
         uses: mamba-org/setup-micromamba@v1
         with:
