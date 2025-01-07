@@ -72,8 +72,6 @@ jobs:
           environment-file: environment.yaml
           cache-environment: true
           cache-downloads: true
-      - name: List current Kernels
-        run: jupyter kernelspec list
         
       - name: Pull Williamette River domain data
         run: |
@@ -83,3 +81,6 @@ jobs:
         working-directory: .github/scripts
         run: |
           python test_notebooks.py
+      
+      - name: List current Kernels
+        run: jupyter kernelspec list
